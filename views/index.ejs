@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Home</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Página ppal</h1>
+    <p>Welcome to mi página de productos</p>
+    
+    <h4>Lista de Productos</h4>
+
+    <% for(let i=0; i<productos.length;i++){  %> 
+      <article>
+        <p>nombre: <%= productos[i].nombre %> </p>
+        <p>precio: <%= productos[i].percio %></p>
+        <% if (productos[i].enStock){ %>
+          <p>Hay stock</p>
+        <% } else { %>
+            <p>No hay stock</p>
+        <% } %>
+        <a href="/productos/unProducto/<%= i %> ">Ver más</a>
+      </article>
+    <% } %> 
+
   </body>
 </html>

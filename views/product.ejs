@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalle de Producto</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Detalle de producto: <%= nombreDeProducto %>  </h1>
+    <p>Estás en el detalle de un producto.</p>
+    <p>el precio es <%= precio %> </p>
+    
+    <% if(enStock) { %> 
+      <p>Hay stock</p>
+    <% } else { %> 
+      <p>No hay stock</p>
+    <% } %>
+    
+  </body>
+</html>

@@ -5,7 +5,13 @@ let productoController = {
     },
     
     show: function (req, res){
-        return res.send ('Estoy en la página del producto: ' + req.params.loquequiera)
+        let datosDeUnProducto = { 
+                                   nombreDeProducto: 'zapatillas Nike',
+                                   precio: 12332,
+                                   enStock: false
+                                }
+                                
+        return res.render ('product', datosDeUnProducto)
     }
 
 }
