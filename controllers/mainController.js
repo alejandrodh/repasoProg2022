@@ -1,3 +1,5 @@
+const db = require('../database/models');
+const movies = db.Movie;
 
 let mainController = {
 
@@ -28,7 +30,17 @@ let mainController = {
 
         ]
 
-        return res.render('index', { productos: listaDeProductos })
+        movies.findAll()
+            .then(function(allMovies){
+                return res.render('index', { 
+                    productos: listaDeProductos,
+                    movies: allMovies
+                 })
+            })
+            .catch(function(e){
+                console.log(e);
+            })
+
     }
 }
 

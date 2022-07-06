@@ -22,6 +22,15 @@
         <a href="/productos/unProducto/<%= i %> ">Ver más</a>
       </article>
     <% } %> 
-
+      <h3>Peliculas de mi sitio</h3>
+      <nav>
+        <a href="">Actores</a>
+        <!-- TODO: crear ruta, ruteador, controlador, modelo y vista para mostar la lista de todos los actores de la tabla actors -->
+      </nav>
+      <ul>
+        <% for(let i=0; i<movies.length;i++){ %>
+          <li><%= movies[i].title%></li>
+        <% } %>
+      </ul>
   </body>
 </html>
