@@ -6,22 +6,6 @@
   </head>
   <body>
     <h1>Página ppal</h1>
-    <p>Welcome to mi página de productos</p>
-    
-    <h4>Lista de Productos</h4>
-
-    <% for(let i=0; i<productos.length;i++){  %> 
-      <article>
-        <p>nombre: <%= productos[i].nombre %> </p>
-        <p>precio: <%= productos[i].percio %></p>
-        <% if (productos[i].enStock){ %>
-          <p>Hay stock</p>
-        <% } else { %>
-            <p>No hay stock</p>
-        <% } %>
-        <a href="/productos/unProducto/<%= i %> ">Ver más</a>
-      </article>
-    <% } %> 
       <h3>Peliculas de mi sitio</h3>
       <nav>
         <a href="">Actores</a>
@@ -29,8 +13,35 @@
       </nav>
       <ul>
         <% for(let i=0; i<movies.length;i++){ %>
-          <li><%= movies[i].title%></li>
+            <% if(movies[i].genre !== null) {%> 
+          <li><%= movies[i].title%>. Género: <a href="/generos/<%= movies[i].genre.id%>/peliculas/"> <%= movies[i].genre.name%></a></li>
+          <% } else {%>
+            <li>
+              <%= movies[i].title%>. Género: sin género
+            </li>
+          <% } %>
         <% } %>
+
+
       </ul>
+
+      <p>Welcome to mi página de productos</p>
+      
+      <hr>
+      <h4>Lista de Productos</h4>
+      <% for(let i=0; i<productos.length;i++){ %>
+        <article>
+          <p>nombre: <%= productos[i].nombre %>
+          </p>
+          <p>precio: <%= productos[i].percio %>
+          </p>
+          <% if (productos[i].enStock){ %>
+            <p>Hay stock</p>
+            <% } else { %>
+              <p>No hay stock</p>
+              <% } %>
+                <a href="/productos/unProducto/<%= i %> ">Ver más</a>
+        </article>
+        <% } %>
   </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peliculas del género</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Página ppal</h1>
+      <h3>Peliculas del genéro: <%= nombreGenero %> </h3>
+      <nav>
+        <a href="">Actores</a>
+        <!-- TODO: crear ruta, ruteador, controlador, modelo y vista para mostar la lista de todos los actores de la tabla actors -->
+      </nav>
+      <ul>
+        <% for(let i=0; i<movies.length;i++){ %>
+          <li><%= movies[i].title%></li>
+        <% } %>
+      </ul>
+
+  </body>
+</html>

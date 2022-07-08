@@ -30,8 +30,13 @@ let mainController = {
 
         ]
 
-        movies.findAll()
+        movies.findAll({
+            include: [{
+                association: 'genre'
+            }]
+        })
             .then(function(allMovies){
+                //return res.send(allMovies)
                 return res.render('index', { 
                     productos: listaDeProductos,
                     movies: allMovies
